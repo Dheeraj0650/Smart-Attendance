@@ -1,0 +1,89 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05-5.jpg",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "83d40eabab003fcbdae0ad48301b9164-2.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05-4.jpg",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05-1.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "83d40eabab003fcbdae0ad48301b9164-3.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05-3.jpg",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "b783c62c2aeb1d73dafa837a3eeb4d05-2.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "83d40eabab003fcbdae0ad48301b9164-4.jpg",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

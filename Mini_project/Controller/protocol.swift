@@ -6,7 +6,7 @@
 //  Copyright © 2020 KOTTE V S S DHEERAJ. All rights reserved.
 //
 
-import Foundation
+
 protocol add_LocationCoordinates{
     func add_coordinates(_ coordinates:String)
 }

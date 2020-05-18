@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		6592EEF70B772D38F6C891B9 /* libPods-Mini_projectTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67211C7BC07D5EB42564D92A /* libPods-Mini_projectTests.a */; };
+		DF58DA422472F4DF00389045 /* swift+gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF58DA412472F4DF00389045 /* swift+gif.swift */; };
+		DF58DA482472F85100389045 /* face-id.gif in Resources */ = {isa = PBXBuildFile; fileRef = DF58DA472472F85100389045 /* face-id.gif */; };
+		DF58DA4A2473048700389045 /* touch-id.gif in Resources */ = {isa = PBXBuildFile; fileRef = DF58DA492473048700389045 /* touch-id.gif */; };
+		DF58DA4C247304E800389045 /* verify.gif in Resources */ = {isa = PBXBuildFile; fileRef = DF58DA4B247304E800389045 /* verify.gif */; };
+		DF58DA4E247306A100389045 /* background.gif in Resources */ = {isa = PBXBuildFile; fileRef = DF58DA4D247306A100389045 /* background.gif */; };
 		DF8EEBE0246972E900E1E0F6 /* Next_registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */; };
 		DFAF00A4246D09E1002D2724 /* Firebase_createUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */; };
 		DFAF00A6246D102B002D2724 /* Firebase_Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A5246D102B002D2724 /* Firebase_Login.swift */; };
-		DFAF00A8246D1057002D2724 /* Firebase_Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A7246D1057002D2724 /* Firebase_Logout.swift */; };
 		DFAF00B8246D51ED002D2724 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00B7246D51ED002D2724 /* Validations.swift */; };
 		DFDB869D246587F20070A394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB869C246587F20070A394 /* AppDelegate.swift */; };
 		DFDB869F246587F20070A394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB869E246587F20070A394 /* SceneDelegate.swift */; };
@@ -59,10 +63,14 @@
 		A2A31B6EA16CA8472705C2BE /* Pods-Mini_project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mini_project.release.xcconfig"; path = "Target Support Files/Pods-Mini_project/Pods-Mini_project.release.xcconfig"; sourceTree = "<group>"; };
 		BF608522981C058EFF8486BF /* Pods-Mini_project-Mini_projectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mini_project-Mini_projectUITests.release.xcconfig"; path = "Target Support Files/Pods-Mini_project-Mini_projectUITests/Pods-Mini_project-Mini_projectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C4AEFB1A72713AD3EC25B403 /* libPods-Mini_project-Mini_projectUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mini_project-Mini_projectUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF58DA412472F4DF00389045 /* swift+gif.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "swift+gif.swift"; sourceTree = "<group>"; };
+		DF58DA472472F85100389045 /* face-id.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "face-id.gif"; sourceTree = "<group>"; };
+		DF58DA492473048700389045 /* touch-id.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "touch-id.gif"; sourceTree = "<group>"; };
+		DF58DA4B247304E800389045 /* verify.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = verify.gif; sourceTree = "<group>"; };
+		DF58DA4D247306A100389045 /* background.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = background.gif; sourceTree = "<group>"; };
 		DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_registration.swift; sourceTree = "<group>"; };
 		DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_createUser.swift; sourceTree = "<group>"; };
 		DFAF00A5246D102B002D2724 /* Firebase_Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Login.swift; sourceTree = "<group>"; };
-		DFAF00A7246D1057002D2724 /* Firebase_Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Logout.swift; sourceTree = "<group>"; };
 		DFAF00B7246D51ED002D2724 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
 		DFDB8699246587F20070A394 /* Mini_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB869C246587F20070A394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +136,6 @@
 			children = (
 				DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */,
 				DFAF00A5246D102B002D2724 /* Firebase_Login.swift */,
-				DFAF00A7246D1057002D2724 /* Firebase_Logout.swift */,
 				DFAF00B7246D51ED002D2724 /* Validations.swift */,
 				DFDD00F5247016180003F543 /* Location_Coordinates.swift */,
 			);
@@ -138,7 +145,12 @@
 		DFAF00A1246D0959002D2724 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DF58DA4D247306A100389045 /* background.gif */,
+				DF58DA4B247304E800389045 /* verify.gif */,
+				DF58DA492473048700389045 /* touch-id.gif */,
+				DF58DA472472F85100389045 /* face-id.gif */,
 				DFDB86A2246587F20070A394 /* Main.storyboard */,
+				DF58DA412472F4DF00389045 /* swift+gif.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -185,8 +197,8 @@
 				DFAF00A2246D0965002D2724 /* Controller */,
 				DFDB869C246587F20070A394 /* AppDelegate.swift */,
 				DFDB869E246587F20070A394 /* SceneDelegate.swift */,
-				DFDD00F7247024B80003F543 /* Assets.xcassets */,
 				DFDB86A7246587F30070A394 /* LaunchScreen.storyboard */,
+				DFDD00F7247024B80003F543 /* Assets.xcassets */,
 				DFDB86AA246587F30070A394 /* Info.plist */,
 				DFE00695246C5CCA009E5AD7 /* GoogleService-Info.plist */,
 			);
@@ -332,6 +344,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDB86A9246587F30070A394 /* LaunchScreen.storyboard in Resources */,
+				DF58DA4C247304E800389045 /* verify.gif in Resources */,
+				DF58DA4E247306A100389045 /* background.gif in Resources */,
+				DF58DA4A2473048700389045 /* touch-id.gif in Resources */,
+				DF58DA482472F85100389045 /* face-id.gif in Resources */,
 				DFE00696246C5CCA009E5AD7 /* GoogleService-Info.plist in Resources */,
 				DFDD00F8247024B80003F543 /* Assets.xcassets in Resources */,
 				DFDB86A4246587F20070A394 /* Main.storyboard in Resources */,
@@ -434,7 +450,7 @@
 				DFF813522466CADD00278A31 /* Registration.swift in Sources */,
 				DF8EEBE0246972E900E1E0F6 /* Next_registration.swift in Sources */,
 				DFDD00F6247016180003F543 /* Location_Coordinates.swift in Sources */,
-				DFAF00A8246D1057002D2724 /* Firebase_Logout.swift in Sources */,
+				DF58DA422472F4DF00389045 /* swift+gif.swift in Sources */,
 				DFAF00B8246D51ED002D2724 /* Validations.swift in Sources */,
 				DFDB86A1246587F20070A394 /* ViewController.swift in Sources */,
 				DFDD00FA24702CA30003F543 /* protocol.swift in Sources */,

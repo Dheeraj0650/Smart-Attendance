@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 6" translatesAutoresizingMaskIntoConstraints="NO" id="haK-iC-dws">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
                                 <color key="backgroundColor" red="0.77875375747680664" green="0.15971350684469887" blue="0.22134283591791334" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x20-v2-2i4">
@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="usm-M6-Qjq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gVK-z6-Bxq">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
@@ -284,7 +284,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-9b-eWe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-yr-hQ7">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
@@ -392,89 +392,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-3k-dFu">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="QfH-3k-dFu">
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Rzo-74-YpT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hello world how are you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwT-M6-8Cl">
+                                <rect key="frame" x="8" y="96" width="359" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <color key="textColor" name="Color-1"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-Wz-6dJ">
+                                <rect key="frame" x="8" y="183" width="359" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="rSS-6W-Pb9">
+                                <rect key="frame" x="18" y="545" width="338" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <segments>
+                                    <segment title="Face ID"/>
+                                    <segment title="" image="lock.fill" catalog="system"/>
+                                    <segment title="Touch ID"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" name="Color"/>
+                                <connections>
+                                    <action selector="verification:" destination="HZp-f3-Sok" eventType="valueChanged" id="KAa-n4-kW8"/>
+                                </connections>
+                            </segmentedControl>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDH-TZ-WWI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oI-Yi-yAb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="412"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tje-Wz-6dJ">
-                                                <rect key="frame" x="67.5" y="272" width="240" height="154"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="154" id="gOS-VO-hDt"/>
-                                                    <constraint firstAttribute="width" constant="240" id="l06-vh-LOe"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hello world how are you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwT-M6-8Cl">
-                                                <rect key="frame" x="8" y="0.0" width="359" height="79"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="79" id="ZIr-gX-QYA"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                                <color key="textColor" name="Color-1"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="hwT-M6-8Cl" firstAttribute="leading" secondItem="9oI-Yi-yAb" secondAttribute="leading" constant="8" id="MoI-qf-LDb"/>
-                                            <constraint firstItem="hwT-M6-8Cl" firstAttribute="top" secondItem="9oI-Yi-yAb" secondAttribute="top" id="P74-dI-BoR"/>
-                                            <constraint firstItem="Tje-Wz-6dJ" firstAttribute="centerX" secondItem="9oI-Yi-yAb" secondAttribute="centerX" id="fDe-HT-TqS"/>
-                                            <constraint firstAttribute="trailing" secondItem="hwT-M6-8Cl" secondAttribute="trailing" constant="8" id="tmP-9S-tXc"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PPx-DL-uKP">
-                                        <rect key="frame" x="0.0" y="412" width="375" height="255"/>
-                                        <subviews>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Kt-ri-zMC">
-                                                <rect key="frame" x="8" y="112" width="359" height="32"/>
-                                                <color key="backgroundColor" red="0.75898414850234985" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="31" id="2Uu-II-c7Y"/>
-                                                    <constraint firstAttribute="width" constant="359" id="os8-LG-Tm7"/>
-                                                </constraints>
-                                                <segments>
-                                                    <segment title="Face ID"/>
-                                                    <segment title="" image="lock.fill" catalog="system"/>
-                                                    <segment title="Touch ID"/>
-                                                </segments>
-                                                <color key="selectedSegmentTintColor" name="Color"/>
-                                                <connections>
-                                                    <action selector="verification:" destination="HZp-f3-Sok" eventType="valueChanged" id="AWz-xu-zbk"/>
-                                                </connections>
-                                            </segmentedControl>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="9Kt-ri-zMC" firstAttribute="centerX" secondItem="PPx-DL-uKP" secondAttribute="centerX" id="Hen-0E-TG5"/>
-                                            <constraint firstItem="9Kt-ri-zMC" firstAttribute="centerY" secondItem="PPx-DL-uKP" secondAttribute="centerY" id="wYy-6H-5AM"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="PPx-DL-uKP" firstAttribute="top" secondItem="Tje-Wz-6dJ" secondAttribute="bottom" constant="-14" id="te7-Jc-mO4"/>
-                                </constraints>
-                            </stackView>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Rzo-74-YpT" secondAttribute="trailing" id="2Xh-z5-fyA"/>
-                            <constraint firstItem="Rzo-74-YpT" firstAttribute="leading" secondItem="u0K-hK-RaU" secondAttribute="leading" id="7Zc-0q-PD6"/>
-                            <constraint firstAttribute="trailing" secondItem="QfH-3k-dFu" secondAttribute="trailing" id="Kjp-JQ-G4J"/>
-                            <constraint firstItem="QfH-3k-dFu" firstAttribute="top" secondItem="u0K-hK-RaU" secondAttribute="top" id="Pfb-UY-At5"/>
-                            <constraint firstAttribute="bottom" secondItem="Rzo-74-YpT" secondAttribute="bottom" id="QdL-22-Pwo"/>
-                            <constraint firstAttribute="bottom" secondItem="QfH-3k-dFu" secondAttribute="bottom" id="VNI-jX-8xg"/>
-                            <constraint firstItem="QfH-3k-dFu" firstAttribute="leading" secondItem="u0K-hK-RaU" secondAttribute="leading" id="ZvT-xt-4td"/>
-                            <constraint firstItem="Rzo-74-YpT" firstAttribute="top" secondItem="u0K-hK-RaU" secondAttribute="top" id="dEG-dO-uQg"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="f6n-zR-cWh"/>
                     </view>
                     <navigationItem key="navigationItem" id="7ym-6t-jKi"/>
+                    <connections>
+                        <outlet property="background" destination="qDH-TZ-WWI" id="Emx-Sm-ZZo"/>
+                        <outlet property="preview" destination="Tje-Wz-6dJ" id="Sji-Y0-wEz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaL-g2-uIW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-81" y="-958"/>
+            <point key="canvasLocation" x="-831.20000000000005" y="-960.2698650674663"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MGN-Nw-AlJ">

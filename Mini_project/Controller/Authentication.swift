@@ -10,12 +10,26 @@ import UIKit
 
 class Authentication: UIViewController {
     
+    @IBOutlet weak var preview: UIImageView!
+    @IBOutlet weak var background: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Do any additional setup after loading the view.
     }
-    @IBAction func verification(_ sender: Any) {
+    @IBAction func verification(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            
+             preview.loadGif(name: "face-id")
+        }
+        else if sender.selectedSegmentIndex == 2{
+            preview.loadGif(name: "touch-id")
+        }
+        else{
+          
+            background.loadGif(name: "background")
+        }
+        
     }
    
 

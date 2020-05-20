@@ -13,12 +13,16 @@ import ImageIO
 extension UIImageView {
 
     public func loadGif(name: String) {
+    
         DispatchQueue.global().async {
             let image = UIImage.gif(name: name)
+            
             DispatchQueue.main.async {
                 self.image = image
             }
+        
         }
+    
     }
 
     @available(iOS 9.0, *)

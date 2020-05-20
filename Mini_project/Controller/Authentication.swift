@@ -11,7 +11,7 @@ import UIKit
 class Authentication: UIViewController {
     
     @IBOutlet weak var preview: UIImageView!
-    @IBOutlet weak var background: UIImageView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,11 +23,18 @@ class Authentication: UIViewController {
              preview.loadGif(name: "face-id")
         }
         else if sender.selectedSegmentIndex == 2{
+            
             preview.loadGif(name: "touch-id")
+            preview.animationImages["verify"]
+//            Timer(timeInterval: 5, repeats: false) { (Timer) in
+//
+//            }
+            
+            
         }
         else{
           
-            background.loadGif(name: "background")
+            preview.loadGif(name: "verify")
         }
         
     }

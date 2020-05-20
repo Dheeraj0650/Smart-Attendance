@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 6" translatesAutoresizingMaskIntoConstraints="NO" id="haK-iC-dws">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.77875375747680664" green="0.15971350684469887" blue="0.22134283591791334" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="x20-v2-2i4">
@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="usm-M6-Qjq">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="gVK-z6-Bxq">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
@@ -284,7 +284,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-9b-eWe">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b5U-yr-hQ7">
                                 <rect key="frame" x="0.0" y="96" width="375" height="571"/>
@@ -387,6 +387,7 @@
         <!--Authentication-->
         <scene sceneID="oX5-Ac-Pyh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaL-g2-uIW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="HZp-f3-Sok" customClass="Authentication" customModule="Mini_project" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u0K-hK-RaU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
@@ -422,21 +423,17 @@
                                     <action selector="verification:" destination="HZp-f3-Sok" eventType="valueChanged" id="KAa-n4-kW8"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDH-TZ-WWI">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="f6n-zR-cWh"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7ym-6t-jKi"/>
+                    <navigationItem key="navigationItem" id="7ym-6t-jKi">
+                        <nil key="title"/>
+                    </navigationItem>
                     <connections>
-                        <outlet property="background" destination="qDH-TZ-WWI" id="Emx-Sm-ZZo"/>
                         <outlet property="preview" destination="Tje-Wz-6dJ" id="Sji-Y0-wEz"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaL-g2-uIW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-831.20000000000005" y="-960.2698650674663"/>
         </scene>

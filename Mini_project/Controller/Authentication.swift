@@ -8,6 +8,7 @@
 
 import UIKit
 import LocalAuthentication
+
 class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     @IBOutlet weak var message: UILabel!
     
@@ -20,8 +21,9 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var background:[UIImage] = []
     var welcome:[UIImage] = []
      let imagePicker = UIImagePickerController()
-    
+    let face_Recognition = Detection()
     override func viewDidLoad() {
+        face_Recognition.delegate = self
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         imagePicker.allowsEditing = true
@@ -36,12 +38,30 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         // Do any additional setup after loading the view.
     }
     
+    func delivered_message(_ message: String) {
+        self.message.text! = message
+    }
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
-            
+            guard let ciimage = CIImage(image: image) else {
+                self.message.text! = "Try again"
+                return
+            }
+            face_Recognition.detect(ciimage)
         }
+        if face_id_verification{
+            animate(preview, face_id)
+        }
+        else{
+            message.text! = "try again"
+        }
+        imagePicker.dismiss(animated: true, completion: nil)
     }
+    
+    
+
     
     func createImageArray(_ total:Int,_ imagePrefix:String){
         for i in 0..<total{
@@ -54,7 +74,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
                 verify.append(image)
             }
             else if imagePrefix == "face-id"{
-                present(imagePicker, animated: true, completion: nil)
+               
                 face_id.append(image)
             }
             else if imagePrefix == "background"{
@@ -79,7 +99,9 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         if sender.selectedSegmentIndex == 0{
             preview.stopAnimating()
             message.text! = ""
-            animate(preview, face_id)
+            present(imagePicker, animated: true, completion: nil)
+            print(face_id_verification)
+         
         }
         else if sender.selectedSegmentIndex == 2{
             preview.stopAnimating()

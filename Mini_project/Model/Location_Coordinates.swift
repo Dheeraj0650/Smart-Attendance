@@ -23,11 +23,11 @@ class Location_coordinates:NSObject,CLLocationManagerDelegate{
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
-            var lat = location.coordinate.latitude
-            var long = location.coordinate.longitude
-            self.location = "\(Double(round(1000*lat)/1000)) \(Double(round(1000*lat)/1000))"
+            let lat = location.coordinate.latitude
+            let long = location.coordinate.longitude
+            self.location = "\(Double(round(1000*lat)/1000)) \(Double(round(1000*long)/1000))"
             delegate?.add_coordinates(self.location!)
-            print(self.location)
+            
         }
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

@@ -8,7 +8,7 @@
 
 import UIKit
 import LocalAuthentication
-
+import Firebase
 class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     @IBOutlet weak var message: UILabel!
     
@@ -156,6 +156,18 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
             }
         } else {
             self.message.text! = "Lock the phone and Unlock using passcode"
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if self.isMovingFromParent{
+            let firebaseAuth = Auth.auth()
+           do {
+             try firebaseAuth.signOut()
+           } catch let signOutError as NSError {
+             print ("Error signing out: %@", signOutError)
+           }
+             
         }
     }
     /*

@@ -411,6 +411,31 @@
             </objects>
             <point key="canvasLocation" x="-1455.2" y="-145.27736131934034"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="BXm-1C-bIx">
+            <objects>
+                <viewController id="bIH-R9-EnA" customClass="DetailsViewController" customModule="Mini_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJ7-1p-LWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Op4-DF-F7Z">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="wAJ-eH-rG6"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Op4-DF-F7Z" id="cvT-WX-QGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xU2-jb-LWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.60000000000002" y="-1365.0674662668666"/>
+        </scene>
     </scenes>
     <resources>
         <image name="image" width="237" height="421"/>

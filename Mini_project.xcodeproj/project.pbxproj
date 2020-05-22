@@ -11,6 +11,9 @@
 		DF2EC8CF24768F3700673419 /* FaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2EC8CE24768F3700673419 /* FaceDetection.swift */; };
 		DF8EEBE0246972E900E1E0F6 /* Next_registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */; };
 		DF9616BF2477CBA000FE8BC0 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DF9616BE2477CBA000FE8BC0 /* Inceptionv3.mlmodel */; };
+		DF9616C32478093E00FE8BC0 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */; };
+		DF9616C624780AE100FE8BC0 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9616C424780AE100FE8BC0 /* DetailCell.swift */; };
+		DF9616C724780AE100FE8BC0 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9616C524780AE100FE8BC0 /* DetailCell.xib */; };
 		DFAF00A4246D09E1002D2724 /* Firebase_createUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */; };
 		DFAF00A6246D102B002D2724 /* Firebase_Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A5246D102B002D2724 /* Firebase_Login.swift */; };
 		DFAF00B8246D51ED002D2724 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00B7246D51ED002D2724 /* Validations.swift */; };
@@ -63,6 +66,9 @@
 		DF2EC8CE24768F3700673419 /* FaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetection.swift; sourceTree = "<group>"; };
 		DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_registration.swift; sourceTree = "<group>"; };
 		DF9616BE2477CBA000FE8BC0 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
+		DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		DF9616C424780AE100FE8BC0 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
+		DF9616C524780AE100FE8BC0 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_createUser.swift; sourceTree = "<group>"; };
 		DFAF00A5246D102B002D2724 /* Firebase_Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_Login.swift; sourceTree = "<group>"; };
 		DFAF00B7246D51ED002D2724 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
@@ -141,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				DFDB86A2246587F20070A394 /* Main.storyboard */,
+				DF9616C424780AE100FE8BC0 /* DetailCell.swift */,
+				DF9616C524780AE100FE8BC0 /* DetailCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 				DFF813532467001500278A31 /* Authentication.swift */,
 				DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */,
 				DFDD00F924702CA30003F543 /* protocol.swift */,
+				DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 				DFE00696246C5CCA009E5AD7 /* GoogleService-Info.plist in Resources */,
 				DFDD00F8247024B80003F543 /* Assets.xcassets in Resources */,
 				DFDB86A4246587F20070A394 /* Main.storyboard in Resources */,
+				DF9616C724780AE100FE8BC0 /* DetailCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,12 +448,14 @@
 				DF8EEBE0246972E900E1E0F6 /* Next_registration.swift in Sources */,
 				DFDD00F6247016180003F543 /* Location_Coordinates.swift in Sources */,
 				DFAF00B8246D51ED002D2724 /* Validations.swift in Sources */,
+				DF9616C624780AE100FE8BC0 /* DetailCell.swift in Sources */,
 				DFDB86A1246587F20070A394 /* ViewController.swift in Sources */,
 				DFDD00FA24702CA30003F543 /* protocol.swift in Sources */,
 				DF2EC8CF24768F3700673419 /* FaceDetection.swift in Sources */,
 				DFAF00A4246D09E1002D2724 /* Firebase_createUser.swift in Sources */,
 				DFDB869D246587F20070A394 /* AppDelegate.swift in Sources */,
 				DFF813542467001500278A31 /* Authentication.swift in Sources */,
+				DF9616C32478093E00FE8BC0 /* DetailsViewController.swift in Sources */,
 				DFDB869F246587F20070A394 /* SceneDelegate.swift in Sources */,
 				DF9616BF2477CBA000FE8BC0 /* Inceptionv3.mlmodel in Sources */,
 			);

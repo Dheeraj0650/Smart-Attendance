@@ -11,7 +11,8 @@ import Firebase
 class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordinates{
 
     
-
+    @IBOutlet weak var loading: UIImageView!
+    var loading_images:[UIImage] = []
     @IBOutlet weak var get_location: UIButton!
     @IBOutlet weak var Signup: UIButton!
     var username:UITextField?
@@ -46,7 +47,24 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         Signup.setTitleColor(UIColor.white,for: .normal)
         Signup.layer.shadowColor = UIColor.red.cgColor
         Signup.layer.shadowRadius = 6
+        createImageArray(48, "loading")
     }
+    func createImageArray(_ total:Int,_ imagePrefix:String){
+           for i in 0..<total{
+               let imageName = "\(imagePrefix)-\(i)"
+               let image = UIImage(named: imageName)!
+               loading_images.append(image)
+           }
+    }
+    
+    func animate(_ imageView:UIImageView,_ images:[UIImage]){
+         imageView.animationImages = images
+         imageView.animationDuration = 1
+         imageView.startAnimating()
+     }
+    
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.endEditing(true)
         return true
@@ -80,9 +98,12 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     }
 
     @IBAction func get_location(_ sender: Any) {
+        
         locationManager.getLocation()
+        animate(loading, loading_images)
     }
     func add_coordinates(_ coordinates:String){
+        loading.stopAnimating()
         location_coordinates.text! = coordinates
     }
     /*

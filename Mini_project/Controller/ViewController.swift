@@ -9,10 +9,12 @@
 import UIKit
 import Firebase
 class ViewController: UIViewController,UITextFieldDelegate{
-
+    @IBOutlet weak var loading: UIImageView!
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var login_button: UIButton!
+    var loading_images:[UIImage]  = []
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -29,6 +31,7 @@ class ViewController: UIViewController,UITextFieldDelegate{
         login_button.setTitleColor(UIColor.white,for: .normal)
         login_button.layer.shadowColor = UIColor.red.cgColor
         login_button.layer.shadowRadius = 6
+        createImageArray(65, "login_loading")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -38,7 +41,7 @@ class ViewController: UIViewController,UITextFieldDelegate{
     
     @IBAction func login(_ sender: Any) {
         if let key  = email.text,let value = password.text{
-                
+            animate(loading, loading_images)
             Auth.auth().signIn(withEmail: key, password: value) { authResult, error in
                     
                 if let Error = error{
@@ -49,21 +52,44 @@ class ViewController: UIViewController,UITextFieldDelegate{
                     
                 }
                 else{
+                    
                     self.performSegue(withIdentifier: "LoginToAuthentication", sender: nil)
+                    
                 }
+                self.loading.stopAnimating()
                 }
                     
         }
         
         
     }
+    func createImageArray(_ total:Int,_ imagePrefix:String){
+           for i in 0..<total{
+               let imageName = "\(imagePrefix)-\(i)"
+               let image = UIImage(named: imageName)!
+               loading_images.append(image)
+           }
+    }
+    
+    func animate(_ imageView:UIImageView,_ images:[UIImage]){
+         imageView.animationImages = images
+         imageView.animationDuration = 1
+         imageView.startAnimating()
+     }
+    
     
 
     @IBAction func signup(_ sender: Any) {
         
         self.performSegue(withIdentifier: "LoginToSignup", sender:self)
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        email.text! = ""
+        email.placeholder! = "username"
+        password.text! = ""
+        password.placeholder! = "password"
+        
+    }
 
 }
 

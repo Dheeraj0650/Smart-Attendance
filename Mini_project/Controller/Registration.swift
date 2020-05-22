@@ -43,10 +43,11 @@ class Registration: UIViewController,UITextFieldDelegate{
                signup.setTitleColor(UIColor.white,for: .normal)
                signup.layer.shadowColor = UIColor.red.cgColor
                signup.layer.shadowRadius = 6
-
+       
         // Do any additional setup after loading the view.
         
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 
         textField.endEditing(true)
@@ -126,6 +127,7 @@ class Registration: UIViewController,UITextFieldDelegate{
         }
     }
     
+    
     /*
     // MARK: - Navigation
 
@@ -135,5 +137,22 @@ class Registration: UIViewController,UITextFieldDelegate{
         // Pass the selected object to the new view controller.
     }
     */
+    override func viewWillAppear(_ animated: Bool) {
+               username.text! = ""
+               username.placeholder! = "username"
+               
+           
+               gmail.text! = ""
+               gmail.placeholder! = "gmail"
+               
+        
+               phone_no.text! = ""
+               phone_no.placeholder! = "phone no(123-456-7890)"
+               
+
+               date_of_birth.text! = ""
+               date_of_birth.placeholder! = "date(dd:mm:yyyy)"
+               
+    }
 
 }

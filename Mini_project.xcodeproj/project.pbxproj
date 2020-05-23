@@ -134,9 +134,6 @@
 		DFAF00A0246D094E002D2724 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */,
-				DFAF00A5246D102B002D2724 /* Firebase_Login.swift */,
-				DFAF00B7246D51ED002D2724 /* Validations.swift */,
 				DFDD00F5247016180003F543 /* Location_Coordinates.swift */,
 				DF2EC8CE24768F3700673419 /* FaceDetection.swift */,
 			);
@@ -156,6 +153,9 @@
 		DFAF00A2246D0965002D2724 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				DFAF00A5246D102B002D2724 /* Firebase_Login.swift */,
+				DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */,
+				DFAF00B7246D51ED002D2724 /* Validations.swift */,
 				DFDB86A0246587F20070A394 /* ViewController.swift */,
 				DFF813512466CADD00278A31 /* Registration.swift */,
 				DFF813532467001500278A31 /* Authentication.swift */,

@@ -13,7 +13,10 @@ target 'Mini_project' do
   target 'Mini_projectUITests' do
     # Pods for testing
   end
+  pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
   post_install do |pi|
       pi.pods_project.targets.each do |t|
         t.build_configurations.each do |config|

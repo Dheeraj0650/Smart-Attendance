@@ -8,8 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordinates{
 
+    
+    var ref = Database.database().reference()
     
     @IBOutlet weak var loading: UIImageView!
     var loading_images:[UIImage] = []
@@ -24,9 +27,14 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var re_enter_password: UITextField!
     var locationManager = Location_coordinates()
+    var userDetail = [String:String]()
+    var userLogs:[String:String] = [:]
     
+   
     override func viewDidLoad() {
+      
         super.viewDidLoad()
+        userDetail = [:]
         locationManager.delegate = self
         // Do any additional setup after loading the view.
         get_location.layer.cornerRadius = get_location.frame.height / 2
@@ -48,6 +56,7 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         Signup.layer.shadowColor = UIColor.red.cgColor
         Signup.layer.shadowRadius = 6
         createImageArray(48, "loading")
+        
     }
     func createImageArray(_ total:Int,_ imagePrefix:String){
            for i in 0..<total{
@@ -70,8 +79,20 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         return true
     }
     
-    
+    func add_data(){
+        var email_id = email!.text!
+              email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
+        userDetail["Username"] = username!.text!
+        userDetail["Phone_no"] = phone_no!.text!
+        userDetail["Date_Of_Birth"] = date_of_birth!.text!
+        userDetail["Location_Coordinates"] = location_coordinates.text!
 
+      
+        print(email_id)
+        self.ref.child(email_id).setValue(userDetail)
+
+        
+    }
     @IBAction func signup(_ sender: Any) {
         if let a = password.text,let b = re_enter_password.text{
             if a != b{
@@ -83,18 +104,43 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         else{
             return
         }
+        
+        
         if let key = email?.text,let value = password.text{
-            Auth.auth().createUser(withEmail: key, password: value) { authResult, error in
-                if let Error = error{
-                    print(Error)
-                }
-                else{
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-            }
+            var trim_email_id = email!.text!
+                  trim_email_id.removeSubrange(trim_email_id.index(trim_email_id.endIndex, offsetBy: -10) ..<  trim_email_id.endIndex)
+            let usersDB = Database.database().reference().child("\(username!.text!)")
+                var taken = false
+
+                usersDB.observeSingleEvent(of: .value, with: { (snapshot) in
+                    if snapshot.exists() {
+                        taken = true
+                        print("yes")
+                    }
+                    if !taken{
+                                    
+                                    Auth.auth().createUser(withEmail: key, password: value) { authResult, error in
+                                            if let Error = error{
+                                                print(Error)
+                                            }
+                                            else{
+                                            
+                                                    self.add_data()
+                                                self.navigationController?.popToRootViewController(animated: true)
+                                                }
+                                        }
+                    }
+                             
+
+                    
+            
+            
+            
         
-        }
         
+        })
+        
+    }
     }
 
     @IBAction func get_location(_ sender: Any) {
@@ -116,5 +162,6 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     }
     */
     
+
 
 }

@@ -111,7 +111,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
             }
             else{
                 authenticateUser()
-                touch_id_verification = true
+                
             }
         }
         else{
@@ -147,7 +147,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
                     if success {
                         self.animate(self.preview,self.touch_id)
                         self.message.text! = ""
-
+                        self.touch_id_verification = true
                     }
                     else{
                         self.message.text! = "Invalid Touch ID"

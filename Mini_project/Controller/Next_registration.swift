@@ -29,6 +29,9 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     var locationManager = Location_coordinates()
     var userDetail = [String:String]()
     var userLogs:[String:String] = [:]
+    @IBOutlet weak var middle_view: UIView!
+    @IBOutlet weak var top_view: UIView!
+    @IBOutlet weak var bottom_view: UIView!
     
    
     override func viewDidLoad() {
@@ -38,6 +41,9 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         locationManager.delegate = self
         // Do any additional setup after loading the view.
         get_location.layer.cornerRadius = get_location.frame.height / 2
+        get_location.backgroundColor = UIColor.darkGray
+        get_location.layer.shadowColor = UIColor.red.cgColor
+        get_location.layer.shadowRadius = 6
         location_coordinates.delegate = self
         location_coordinates.text!=""
         location_coordinates.placeholder! = "location coordinates"
@@ -55,6 +61,9 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
         Signup.setTitleColor(UIColor.white,for: .normal)
         Signup.layer.shadowColor = UIColor.red.cgColor
         Signup.layer.shadowRadius = 6
+        middle_view.layer.cornerRadius = 45
+        top_view.layer.cornerRadius = 30
+        bottom_view.layer.cornerRadius = 30
         createImageArray(48, "loading")
         
     }

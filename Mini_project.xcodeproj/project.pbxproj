@@ -196,9 +196,9 @@
 				DFAF00A1246D0959002D2724 /* View */,
 				DFAF00A2246D0965002D2724 /* Controller */,
 				DFDB869C246587F20070A394 /* AppDelegate.swift */,
+				DFDD00F7247024B80003F543 /* Assets.xcassets */,
 				DFDB869E246587F20070A394 /* SceneDelegate.swift */,
 				DFDB86A7246587F30070A394 /* LaunchScreen.storyboard */,
-				DFDD00F7247024B80003F543 /* Assets.xcassets */,
 				DFDB86AA246587F30070A394 /* Info.plist */,
 				DFE00695246C5CCA009E5AD7 /* GoogleService-Info.plist */,
 			);

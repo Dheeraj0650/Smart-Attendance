@@ -11,7 +11,11 @@ import LocalAuthentication
 import Firebase
 class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
     @IBOutlet weak var message: UILabel!
+    @IBOutlet weak var bottom_view: UIView!
     
+    @IBOutlet weak var preview_view: UIView!
+    @IBOutlet weak var middle_imageView: UIImageView!
+    @IBOutlet weak var middle_view: UIView!
     @IBOutlet weak var preview: UIImageView!
     var touch_id_verification = false
     var face_id_verification = false
@@ -34,6 +38,10 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         createImageArray(120, "verify")
         createImageArray(128, "background")
         createImageArray(107, "welcome")
+        middle_view.layer.cornerRadius = 30
+        bottom_view.layer.cornerRadius = 40
+        middle_imageView.layer.cornerRadius = 30
+        preview_view.layer.cornerRadius = 30
         animate(preview, welcome)
         // Do any additional setup after loading the view.
     }

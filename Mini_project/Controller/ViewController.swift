@@ -10,7 +10,9 @@ import UIKit
 import Firebase
 class ViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var loading: UIImageView!
+    @IBOutlet weak var Background: UIView!
     
+    @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var login_button: UIButton!
@@ -20,17 +22,26 @@ class ViewController: UIViewController,UITextFieldDelegate{
         // Do any additional setup after loading the view.
         email.delegate = self
         email.text! = ""
-        email.placeholder! = "username"
+        email.placeholder! = "Email"
         
         password.delegate = self
         password.text! = ""
-        password.placeholder! = "password"
+        password.placeholder! = "Password"
         
+      
+       
         login_button.backgroundColor = UIColor.darkGray
         login_button.layer.cornerRadius = login_button.frame.height / 2
         login_button.setTitleColor(UIColor.white,for: .normal)
         login_button.layer.shadowColor = UIColor.red.cgColor
         login_button.layer.shadowRadius = 6
+        Background.layer.cornerRadius = 50
+        
+        
+     
+        signup.layer.cornerRadius = signup.frame.height/2
+        signup.layer.shadowRadius = 6
+        signup.layer.shadowColor = UIColor.black.cgColor
         createImageArray(65, "login_loading")
     }
     
@@ -85,9 +96,9 @@ class ViewController: UIViewController,UITextFieldDelegate{
     }
     override func viewWillAppear(_ animated: Bool) {
         email.text! = ""
-        email.placeholder! = "username"
+        email.placeholder! = "Email"
         password.text! = ""
-        password.placeholder! = "password"
+        password.placeholder! = "Password"
         
     }
 

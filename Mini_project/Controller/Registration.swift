@@ -15,7 +15,10 @@ class Registration: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var gmail: UITextField!
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var phone_no: UITextField!
+    @IBOutlet weak var background: UIView!
+    
 
+    @IBOutlet weak var another_background: UIView!
     @IBOutlet weak var date_of_birth: UITextField!
     let validation = Validation()
     override func viewDidLoad() {
@@ -35,14 +38,17 @@ class Registration: UIViewController,UITextFieldDelegate{
         date_of_birth.delegate = self
         date_of_birth.text! = ""
         date_of_birth.placeholder! = "date(dd:mm:yyyy)"
-        
-        
+   
         
         signup.backgroundColor = UIColor.darkGray
                signup.layer.cornerRadius = signup.frame.height / 2
                signup.setTitleColor(UIColor.white,for: .normal)
                signup.layer.shadowColor = UIColor.red.cgColor
                signup.layer.shadowRadius = 6
+        background.layer.cornerRadius = 45
+        background.layer.shadowRadius = 20
+        background.layer.shadowColor = UIColor.red.cgColor
+        another_background.layer.cornerRadius = 30
        
         // Do any additional setup after loading the view.
         

@@ -90,7 +90,7 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     
     func add_data(){
         var email_id = email!.text!
-              email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
+        email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
         userDetail["Username"] = username!.text!
         userDetail["Phone_no"] = phone_no!.text!
         userDetail["Date_Of_Birth"] = date_of_birth!.text!
@@ -99,6 +99,7 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
       
         print(email_id)
         self.ref.child(email_id).setValue(userDetail)
+        self.ref.child("\(email_id)_val").setValue([String:[Double]]())
 
         
     }

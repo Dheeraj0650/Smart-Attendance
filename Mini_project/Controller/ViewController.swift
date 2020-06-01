@@ -88,6 +88,12 @@ class ViewController: UIViewController,UITextFieldDelegate{
          imageView.startAnimating()
      }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     
+            let destinationVC = segue.destination as? Authentication
+            destinationVC?.email = email.text!
+    }
+    
     
 
     @IBAction func signup(_ sender: Any) {

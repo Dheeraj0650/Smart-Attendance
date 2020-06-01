@@ -9,14 +9,22 @@
 import UIKit
 import LocalAuthentication
 import Firebase
-class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+import CoreLocation
+import FirebaseDatabase
+class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate{
+    var ref = Database.database().reference()
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var bottom_view: UIView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var attendance_view: UIImageView!
     @IBOutlet weak var preview_view: UIView!
     @IBOutlet weak var middle_imageView: UIImageView!
     @IBOutlet weak var middle_view: UIView!
     @IBOutlet weak var preview: UIImageView!
+    
+    var email:String?
+    var locationManager = CLLocationManager()
     var touch_id_verification = false
     var face_id_verification = false
     var touch_id:[UIImage] = []
@@ -26,6 +34,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
     var welcome:[UIImage] = []
      let imagePicker = UIImagePickerController()
     let face_Recognition = Detection()
+    var distance = CalculateDistance()
     override func viewDidLoad() {
         face_Recognition.delegate = self
         imagePicker.delegate = self
@@ -42,6 +51,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         bottom_view.layer.cornerRadius = 40
         middle_imageView.layer.cornerRadius = 30
         preview_view.layer.cornerRadius = 30
+        attendance_view.layer.cornerRadius = 30
         animate(preview, welcome)
         // Do any additional setup after loading the view.
     }
@@ -177,6 +187,79 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
            }
              
         }
+    }
+    @IBAction func mark_attendance(_ sender: Any) {
+
+        if !(touch_id_verification && face_id_verification){
+
+            locationManager.delegate = self
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.requestLocation()
+
+        }
+        else{
+            
+            message.text! = "Verification Failed"
+            
+        }
+        
+         
+    }
+    
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last{
+            let lat1 = 0
+            let lon1 = 0
+            let coordinate0 = CLLocation(latitude: Double(round(1000000*lat1)/1000000), longitude: Double(round(1000000*lon1)/1000000))
+            let d = coordinate0.distance(from: location)
+            print(d.rounded(.towardZero))
+            if d < 30 {
+                
+                var email_id = email!
+                email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
+                   let usersDB = Database.database().reference().child(email_id)
+                        var taken = false
+
+                        usersDB.observeSingleEvent(of: .value, with: { (snapshot) in
+                            if snapshot.exists() {
+                                taken = true
+                                print("yes")
+                            }
+                            if !taken{
+                                    
+                            }
+                            else{
+                                let date = Date()
+                                let calendar = Calendar.current
+                                let hour = calendar.component(.hour, from: date)
+                                let minutes = calendar.component(.minute, from: date)
+                                print(hour,minutes)
+                                var log_dic = [String:[Double]]()
+                                log_dic["\(hour):\(minutes)"] = [Double(location.coordinate.latitude),Double(location.coordinate.longitude)]
+                                self.ref.child("\(email_id)_val").setValue(log_dic)
+                            }
+                                     
+
+                            
+                    
+                    
+                    
+                
+                
+                })
+             
+                message.text! = "your attendance has been recorded"
+                segmentedControl.setImage(UIImage(systemName: "lock.open.fill" ), forSegmentAt: 1)
+                
+                
+                
+            }
+            
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+     print("error")
     }
     /*
     // MARK: - Navigation

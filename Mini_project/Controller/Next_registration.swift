@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import IQKeyboardManagerSwift
 class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordinates{
 
     
@@ -37,6 +38,9 @@ class Next_registration: UIViewController,UITextFieldDelegate,add_LocationCoordi
     override func viewDidLoad() {
       
         super.viewDidLoad()
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside  = true
         userDetail = [:]
         locationManager.delegate = self
         // Do any additional setup after loading the view.

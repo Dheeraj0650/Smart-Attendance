@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 class ViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var loading: UIImageView!
     @IBOutlet weak var Background: UIView!
@@ -20,6 +21,9 @@ class ViewController: UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside  = true
         email.delegate = self
         email.text! = ""
         email.placeholder! = "Email"

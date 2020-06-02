@@ -12,9 +12,13 @@ class DetailCell: UITableViewCell {
 
     @IBOutlet weak var DetailView: UIView!
     @IBOutlet weak var DetailLabel: UILabel!
-    @IBOutlet weak var DetailButton: UIButton!
+
+    @IBOutlet weak var location_logo: UIImageView!
+    
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        DetailLabel.layer.cornerRadius = DetailLabel.frame.height/2
         // Initialization code
     }
 

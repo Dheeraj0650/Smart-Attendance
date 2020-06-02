@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import IQKeyboardManagerSwift
 class Registration: UIViewController,UITextFieldDelegate{
     var new_user = Create_User()
 
@@ -23,6 +24,9 @@ class Registration: UIViewController,UITextFieldDelegate{
     let validation = Validation()
     override func viewDidLoad() {
         super.viewDidLoad()
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.shouldResignOnTouchOutside  = true
         username.delegate = self
         username.text! = ""
         username.placeholder! = "username"

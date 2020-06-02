@@ -8,23 +8,34 @@
 
 import UIKit
 
+
 class DetailsViewController: UIViewController,UITableViewDataSource {
-    
+
+
     @IBOutlet weak var tableView: UITableView!
+    var detail_log_dic = [String:[Double]]()
+    
+    var email:String?
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DetailCell", bundle:nil), forCellReuseIdentifier: "ReusableCell")
-
-        // Do any additional setup after loading the view.
+        tableView.reloadData()
+                
     }
+   
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return detail_log_dic.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! DetailCell
+        let firstKey = Array(detail_log_dic.keys)
+        print( firstKey[indexPath.row])
+        cell.DetailLabel.text! = firstKey[indexPath.row]
         return cell
     }
     
@@ -40,3 +51,4 @@ class DetailsViewController: UIViewController,UITableViewDataSource {
     */
 
 }
+

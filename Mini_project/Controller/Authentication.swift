@@ -13,6 +13,7 @@ import CoreLocation
 import FirebaseDatabase
 class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate{
     var ref = Database.database().reference()
+    var destination = DetailsViewController()
     @IBOutlet weak var message: UILabel!
     @IBOutlet weak var bottom_view: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -35,7 +36,9 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
      let imagePicker = UIImagePickerController()
     let face_Recognition = Detection()
     var distance = CalculateDistance()
+     var log_dic = [String:[Double]]()
     override func viewDidLoad() {
+        log_dic = [:]
         face_Recognition.delegate = self
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
@@ -52,6 +55,17 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         middle_imageView.layer.cornerRadius = 30
         preview_view.layer.cornerRadius = 30
         attendance_view.layer.cornerRadius = 30
+        var email_id = email!
+        email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
+        let usersDB = Database.database().reference().child("\(email_id)_val")
+        usersDB.observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists(){
+                        let dic = snapshot.value as! NSDictionary
+                        for i in dic{
+                            self.log_dic[i.key as! String] = i.value as? [Double]
+                        }
+            }
+        })
         animate(preview, welcome)
         // Do any additional setup after loading the view.
     }
@@ -190,7 +204,7 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
     @IBAction func mark_attendance(_ sender: Any) {
 
-        if !(touch_id_verification && face_id_verification){
+        if (touch_id_verification && face_id_verification){
 
             locationManager.delegate = self
             locationManager.requestWhenInUseAuthorization()
@@ -209,46 +223,21 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.last{
-            let lat1 = 0
-            let lon1 = 0
+            let lat1 = 0.0
+            let lon1 = 0.0
             let coordinate0 = CLLocation(latitude: Double(round(1000000*lat1)/1000000), longitude: Double(round(1000000*lon1)/1000000))
             let d = coordinate0.distance(from: location)
-            print(d.rounded(.towardZero))
-            if d < 30 {
+            if d.rounded(.towardZero) < 30 {
                 
                 var email_id = email!
                 email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
-                   let usersDB = Database.database().reference().child(email_id)
-                        var taken = false
-
-                        usersDB.observeSingleEvent(of: .value, with: { (snapshot) in
-                            if snapshot.exists() {
-                                taken = true
-                                print("yes")
-                            }
-                            if !taken{
-                                    
-                            }
-                            else{
-                                let date = Date()
-                                let calendar = Calendar.current
-                                let hour = calendar.component(.hour, from: date)
-                                let minutes = calendar.component(.minute, from: date)
-                                print(hour,minutes)
-                                var log_dic = [String:[Double]]()
-                                log_dic["\(hour):\(minutes)"] = [Double(location.coordinate.latitude),Double(location.coordinate.longitude)]
-                                self.ref.child("\(email_id)_val").setValue(log_dic)
-                            }
-                                     
-
+                let date = Date()
+                let calendar = Calendar.current
+                let hour = calendar.component(.hour, from: date)
+                let minutes = calendar.component(.minute, from: date)
+                self.log_dic["\(hour):\(minutes)"] = [Double(location.coordinate.latitude),Double(location.coordinate.longitude)]
+                self.ref.child("\(email_id)_val").setValue(self.log_dic)
                             
-                    
-                    
-                    
-                
-                
-                })
-             
                 message.text! = "your attendance has been recorded"
                 segmentedControl.setImage(UIImage(systemName: "lock.open.fill" ), forSegmentAt: 1)
                 
@@ -270,5 +259,19 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
         // Pass the selected object to the new view controller.
     }
     */
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? DetailsViewController {
+            var email_id = email!
+            email_id.removeSubrange(email_id.index(email_id.endIndex, offsetBy: -10) ..<  email_id.endIndex)
+            destinationVC.detail_log_dic = log_dic
+            destinationVC.email = "\(email_id)_val"
+            
+        
+            
+        }
+    }
+    @IBAction func Details(_ sender: Any) {
+        performSegue(withIdentifier: "AuthenticationToDetailsViewController", sender: nil)
+    }
+    
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tZP-RW-IoP">
-    <device id="retina4_7" orientation="portrait" appearance="dark"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -229,7 +229,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-9b-eWe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-g7-DGv">
                                 <rect key="frame" x="199" y="103" width="144" height="134"/>
@@ -297,7 +297,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UPy-Bs-XUH">
-                                        <rect key="frame" x="28" y="201" width="295" height="55"/>
+                                        <rect key="frame" x="20" y="196" width="295" height="55"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -420,6 +420,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="7ym-6t-jKi">
                         <nil key="title"/>
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="DxE-Bv-MRL">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="Details:" destination="HZp-f3-Sok" id="yCg-qh-eFv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="attendance_view" destination="rWa-fx-5Fy" id="xv8-HR-R0W"/>
@@ -430,11 +436,12 @@
                         <outlet property="preview" destination="Tje-Wz-6dJ" id="Sji-Y0-wEz"/>
                         <outlet property="preview_view" destination="ixT-ef-PJd" id="14s-cx-ren"/>
                         <outlet property="segmentedControl" destination="rSS-6W-Pb9" id="gfw-tY-e7B"/>
+                        <segue destination="bIH-R9-EnA" kind="show" identifier="AuthenticationToDetailsViewController" id="xLp-OF-EaK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZaL-g2-uIW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-831.20000000000005" y="-960.2698650674663"/>
+            <point key="canvasLocation" x="-737" y="-1038"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MGN-Nw-AlJ">
@@ -476,6 +483,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="wAJ-eH-rG6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ash-kq-IhY"/>
                     <connections>
                         <outlet property="tableView" destination="Op4-DF-F7Z" id="cvT-WX-QGZ"/>
                     </connections>

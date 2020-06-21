@@ -16,7 +16,7 @@ As we all know,attendance plays a major role in the assessment of regularity and
 
 
 ## Pod Installation
-* **pod 'Firebase/Core'**
-* **pod 'Firebase/Auth'**
-* **pod 'Firebase/Storage'**
-* **pod 'Firebase/Database'**
+* `pod 'Firebase/Core'`
+* `pod 'Firebase/Auth'`
+* `pod 'Firebase/Storage'`
+* `pod 'Firebase/Database'`

@@ -10,4 +10,4 @@ As we all know,attendance plays a major role in the assessment of regularity and
 
 ## Some of the modules we use in our project are:
 * Advanced coreML module in iOS for face recognition
-*CoreLocation to retrieve the data of the specific location coordinates and usage of hash set to store these values.
+* CoreLocation to retrieve the data of the specific location coordinates and usage of hash set to store these values.

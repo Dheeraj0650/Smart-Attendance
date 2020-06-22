@@ -9,17 +9,18 @@
 import UIKit
 
 
-class DetailsViewController: UIViewController,UITableViewDataSource {
+class DetailsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate{
 
 
     @IBOutlet weak var tableView: UITableView!
     var detail_log_dic = [String:[Double]]()
-    
+    var curr_no = 0
     var email:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "DetailCell", bundle:nil), forCellReuseIdentifier: "ReusableCell")
         tableView.reloadData()
                 
@@ -34,10 +35,25 @@ class DetailsViewController: UIViewController,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! DetailCell
         let firstKey = Array(detail_log_dic.keys)
-        print( firstKey[indexPath.row])
-        cell.DetailLabel.text! = firstKey[indexPath.row]
+      
+        cell.DetailLabel.text! = "your attendance has been recorded at \(firstKey[indexPath.row])"
         return cell
     }
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        curr_no = indexPath.row
+        performSegue(withIdentifier: "DetailsViewToMapView", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let firstKey = Array(detail_log_dic.keys)
+        if let destinationVC =  segue.destination as? MapViewController{
+            destinationVC.latitude = detail_log_dic[firstKey[curr_no]]![0]
+            destinationVC.longitude = detail_log_dic[firstKey[curr_no]]![1]
+        }
+    }
+    
     
 
     /*

@@ -11,12 +11,12 @@
 		DF2EC8CF24768F3700673419 /* FaceDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2EC8CE24768F3700673419 /* FaceDetection.swift */; };
 		DF7284AA2486731C00DC557F /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DF7284A92486731C00DC557F /* IQKeyboardManagerSwift */; };
 		DF8EEBE0246972E900E1E0F6 /* Next_registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */; };
-		DF9616BF2477CBA000FE8BC0 /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = DF9616BE2477CBA000FE8BC0 /* Inceptionv3.mlmodel */; };
 		DF9616C32478093E00FE8BC0 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */; };
 		DF9616C624780AE100FE8BC0 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9616C424780AE100FE8BC0 /* DetailCell.swift */; };
 		DF9616C724780AE100FE8BC0 /* DetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF9616C524780AE100FE8BC0 /* DetailCell.xib */; };
 		DFAF00A4246D09E1002D2724 /* Firebase_createUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */; };
 		DFAF00B8246D51ED002D2724 /* Validations.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAF00B7246D51ED002D2724 /* Validations.swift */; };
+		DFBDA61724A0D1AF004E4C17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFBDA61624A0D1AF004E4C17 /* MapViewController.swift */; };
 		DFDB869D246587F20070A394 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB869C246587F20070A394 /* AppDelegate.swift */; };
 		DFDB869F246587F20070A394 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB869E246587F20070A394 /* SceneDelegate.swift */; };
 		DFDB86A1246587F20070A394 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDB86A0246587F20070A394 /* ViewController.swift */; };
@@ -66,12 +66,12 @@
 		C4AEFB1A72713AD3EC25B403 /* libPods-Mini_project-Mini_projectUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Mini_project-Mini_projectUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2EC8CE24768F3700673419 /* FaceDetection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceDetection.swift; sourceTree = "<group>"; };
 		DF8EEBDF246972E900E1E0F6 /* Next_registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next_registration.swift; sourceTree = "<group>"; };
-		DF9616BE2477CBA000FE8BC0 /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		DF9616C424780AE100FE8BC0 /* DetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		DF9616C524780AE100FE8BC0 /* DetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCell.xib; sourceTree = "<group>"; };
 		DFAF00A3246D09E1002D2724 /* Firebase_createUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase_createUser.swift; sourceTree = "<group>"; };
 		DFAF00B7246D51ED002D2724 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
+		DFBDA61624A0D1AF004E4C17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		DFDB8699246587F20070A394 /* Mini_project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mini_project.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFDB869C246587F20070A394 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFDB869E246587F20070A394 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +164,7 @@
 				DFDD00F924702CA30003F543 /* protocol.swift */,
 				DF9616C22478093E00FE8BC0 /* DetailsViewController.swift */,
 				DFEE77132485126100DA5382 /* calculateDistance.swift */,
+				DFBDA61624A0D1AF004E4C17 /* MapViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -193,7 +194,6 @@
 		DFDB869B246587F20070A394 /* Mini_project */ = {
 			isa = PBXGroup;
 			children = (
-				DF9616BE2477CBA000FE8BC0 /* Inceptionv3.mlmodel */,
 				DFAF00A0246D094E002D2724 /* Model */,
 				DFAF00A1246D0959002D2724 /* View */,
 				DFAF00A2246D0965002D2724 /* Controller */,
@@ -465,7 +465,7 @@
 				DFF813542467001500278A31 /* Authentication.swift in Sources */,
 				DF9616C32478093E00FE8BC0 /* DetailsViewController.swift in Sources */,
 				DFDB869F246587F20070A394 /* SceneDelegate.swift in Sources */,
-				DF9616BF2477CBA000FE8BC0 /* Inceptionv3.mlmodel in Sources */,
+				DFBDA61724A0D1AF004E4C17 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

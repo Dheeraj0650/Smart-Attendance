@@ -229,7 +229,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image 5" translatesAutoresizingMaskIntoConstraints="NO" id="XC2-9b-eWe">
-                                <rect key="frame" x="0.0" y="0.0" width="375.00000000000006" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ic4-g7-DGv">
                                 <rect key="frame" x="199" y="103" width="144" height="134"/>
@@ -486,11 +486,42 @@
                     <navigationItem key="navigationItem" id="ash-kq-IhY"/>
                     <connections>
                         <outlet property="tableView" destination="Op4-DF-F7Z" id="cvT-WX-QGZ"/>
+                        <segue destination="WIE-oZ-uLs" kind="show" identifier="DetailsViewToMapView" id="wKU-gW-Uct"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xU2-jb-LWe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="365.60000000000002" y="-1365.0674662668666"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="iQl-Al-Fm6">
+            <objects>
+                <viewController id="WIE-oZ-uLs" customClass="MapViewController" customModule="Mini_project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jY0-dn-jQu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="I7N-IN-R6n">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="I7N-IN-R6n" secondAttribute="bottom" id="7qn-qB-AyW"/>
+                            <constraint firstAttribute="trailing" secondItem="I7N-IN-R6n" secondAttribute="trailing" id="D7x-Ow-Xwv"/>
+                            <constraint firstItem="I7N-IN-R6n" firstAttribute="top" secondItem="jY0-dn-jQu" secondAttribute="top" id="T93-nV-bka"/>
+                            <constraint firstItem="I7N-IN-R6n" firstAttribute="leading" secondItem="jY0-dn-jQu" secondAttribute="leading" id="guz-8D-MpU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lsh-hv-AYo"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dmz-FR-nwO"/>
+                    <connections>
+                        <outlet property="mapView" destination="I7N-IN-R6n" id="PPj-tF-vNf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0oK-L2-f8O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1319.2" y="-1466.7166416791606"/>
         </scene>
     </scenes>
     <resources>

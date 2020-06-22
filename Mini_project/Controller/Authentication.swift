@@ -11,6 +11,7 @@ import LocalAuthentication
 import Firebase
 import CoreLocation
 import FirebaseDatabase
+import CoreImage
 class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,CLLocationManagerDelegate{
     var ref = Database.database().reference()
     var destination = DetailsViewController()
@@ -80,6 +81,35 @@ class Authentication: UIViewController,UIImagePickerControllerDelegate,UINavigat
             guard let ciimage = CIImage(image: image) else {
                 self.message.text! = "Try again"
                 return
+            }
+            let accuracy = [CIDetectorAccuracy:CIDetectorAccuracyHigh]
+            let faceDetector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: accuracy)
+            let faces = faceDetector?.features(in: ciimage)
+            
+            if let faces = faces{
+                if !faces.isEmpty{
+                    for face in faces as! [CIFaceFeature]{
+                        if (face.hasLeftEyePosition  && face.hasRightEyePosition && face.hasMouthPosition ){
+                            if face.leftEyeClosed || face.rightEyeClosed{
+                                message.text = "Face authentication failed"
+                                imagePicker.dismiss(animated: true, completion: nil)
+                                return
+                            }
+                            break
+                        }
+                        else{
+                            message.text = "Face authentication failed"
+                            imagePicker.dismiss(animated: true, completion: nil)
+                            return
+                        }
+                    }
+                }
+                else{
+                    message.text = "No face found"
+                    imagePicker.dismiss(animated: true, completion: nil)
+                    return
+                }
+            
             }
             face_Recognition.detect(ciimage)
         }

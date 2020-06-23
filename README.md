@@ -14,9 +14,13 @@ As we all know,attendance plays a major role in the assessment of regularity and
 * Firebase to store data.
 * MapKit to show user location.
 
+##Screenshots
+
+![alt text](https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png "Login Page")
 
 ## Pod Installation
 * `pod 'Firebase/Core'`
 * `pod 'Firebase/Auth'`
 * `pod 'Firebase/Storage'`
 * `pod 'Firebase/Database'`
+https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png

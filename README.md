@@ -15,7 +15,7 @@ As we all know,attendance plays a major role in the assessment of regularity and
 * MapKit to show user location.
 
 ## Screenshots
-<img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png" width="200" height="400" />
+<img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png" width="655" height="1135" />
 
 
 ## Pod Installation

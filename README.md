@@ -16,7 +16,7 @@ As we all know,attendance plays a major role in the assessment of regularity and
 
 ##Screenshots
 
-![alt text](https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png "Login Page")
+![alt text](https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%10page.png "Login Page")
 
 ## Pod Installation
 * `pod 'Firebase/Core'`

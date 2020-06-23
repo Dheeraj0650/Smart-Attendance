@@ -15,12 +15,12 @@ As we all know,attendance plays a major role in the assessment of regularity and
 * MapKit to show user location.
 
 ## Screenshots
+<img src="https://camo.githubusercontent.com/..." data-canonical-src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png" width="200" height="400" />
 
-![](https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png =250x250)
 
 ## Pod Installation
 * `pod 'Firebase/Core'`
 * `pod 'Firebase/Auth'`
 * `pod 'Firebase/Storage'`
 * `pod 'Firebase/Database'`
-https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png
+

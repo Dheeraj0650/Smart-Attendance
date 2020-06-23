@@ -15,7 +15,7 @@ As we all know,attendance plays a major role in the assessment of regularity and
 * MapKit to show user location.
 
 ## Screenshots
-<img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png" width="355" height="600" />      <img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/registration%20page.png" width="355" height="600" />  <img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/registration%20page%201.png" width="355" height="600" />  
+<img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/login%20page.png" width="355" height="600" /> %20 <img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/registration%20page.png" width="355" height="600" />  <img src="https://github.com/Dheeraj0650/Smart-Attendance/blob/branch_1/registration%20page%202.png" width="355" height="600" />  
 
 
 
